@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcastor_docs=globalThis.webpackChunkcastor_docs||[]).push([[558],{3041(a){a.exports=JSON.parse('{"tags":[{"label":"announcement","permalink":"/castor-docs/blog/tags/announcement","count":1},{"label":"architecture","permalink":"/castor-docs/blog/tags/architecture","count":1}]}')}}]);

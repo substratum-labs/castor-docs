@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcastor_docs=globalThis.webpackChunkcastor_docs||[]).push([[903],{1912(s){s.exports=JSON.parse('{"blogBasePath":"/castor-docs/blog","blogTitle":"Castor Engineering Blog","authorsListPath":"/castor-docs/blog/authors"}')}}]);
