@@ -48,7 +48,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-preemptive-scheduling">4. Preemptive Scheduling<a href="https://substrate-lab.github.io/castor-docs/blog/introducing-castor#4-preemptive-scheduling" class="hash-link" aria-label="Direct link to 4. Preemptive Scheduling" title="Direct link to 4. Preemptive Scheduling" translate="no">​</a></h3>
 <p><code>asyncio.Task.cancel()</code> injects a <code>CancelledError</code> at the next <code>await</code> point. Since LLM streaming has an <code>await</code> at every chunk boundary, the kernel can preempt an agent at <strong>token-level granularity</strong> — typically 10-100ms. No shielded sections needed; the fast/slow path split handles double-execution risk.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-context-window-management">5. Context Window Management<a href="https://substrate-lab.github.io/castor-docs/blog/introducing-castor#5-context-window-management" class="hash-link" aria-label="Direct link to 5. Context Window Management" title="Direct link to 5. Context Window Management" translate="no">​</a></h3>
-<p>The Lodge subsystem monitors token usage, pins system prompts (never evicted), and removes stale messages via FIFO when the context window fills up. Agents can retrieve evicted memories with <code>search_memory</code>.</p>
+<p>The MMU subsystem monitors token usage, pins system prompts (never evicted), and removes stale messages via FIFO when the context window fills up. Agents can retrieve evicted memories with <code>search_memory</code>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="framework-integration">Framework Integration<a href="https://substrate-lab.github.io/castor-docs/blog/introducing-castor#framework-integration" class="hash-link" aria-label="Direct link to Framework Integration" title="Direct link to Framework Integration" translate="no">​</a></h2>
 <p>Castor works standalone or as a <strong>guard layer</strong> for existing frameworks. We've built proven integrations with:</p>
 <ul>
@@ -59,11 +59,12 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="current-status">Current Status<a href="https://substrate-lab.github.io/castor-docs/blog/introducing-castor#current-status" class="hash-link" aria-label="Direct link to Current Status" title="Direct link to Current Status" translate="no">​</a></h2>
 <p>Phase 1 is complete:</p>
 <ul>
-<li class=""><strong>249 tests</strong>, 0 lint errors</li>
-<li class="">All core requirements implemented (Dam, Stream, Lodge, Capability)</li>
+<li class=""><strong>368 tests</strong>, 0 lint errors</li>
+<li class="">All core requirements implemented (Gate, Scheduler, MMU, Capability)</li>
 <li class="">Sync + async multi-agent spawning with budget delegation</li>
 <li class="">Token-level LLM preemption with proportional budget</li>
-<li class="">CLI for checkpoint inspection (list, show, reject, modify)</li>
+<li class=""><code>castor.lib</code> — agent developer standard library with <code>tool()</code>, <code>chat()</code>, <code>react()</code>, <code>supervisor()</code>, and more</li>
+<li class="">Expanded CLI: <code>castor run</code>, <code>castor ps</code>, <code>castor inspect</code>, <code>castor reject</code>, <code>castor modify</code></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-next">What's Next<a href="https://substrate-lab.github.io/castor-docs/blog/introducing-castor#whats-next" class="hash-link" aria-label="Direct link to What's Next" title="Direct link to What's Next" translate="no">​</a></h2>
 <p><strong>Phase 2</strong> will push hot paths to Rust via PyO3 for performance. You'll still <code>import castor</code> in Python — the Rust core will be a compiled extension module.</p>
