@@ -68,7 +68,7 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-next">What's Next<a href="https://substratum-labs.github.io/castor-docs/blog/introducing-castor#whats-next" class="hash-link" aria-label="Direct link to What's Next" title="Direct link to What's Next" translate="no">​</a></h2>
 <p><strong>Phase 2</strong> will push hot paths to Rust via PyO3 for performance. You'll still <code>import castor</code> in Python — the Rust core will be a compiled extension module.</p>
-<p>We're also exploring <strong>Constellation</strong> — distributed agent orchestration where checkpoints are the portable unit of execution across nodes.</p>
+<p>We're also exploring <strong>Orrery</strong> — distributed agent orchestration where checkpoints are the portable unit of execution across nodes.</p>
 <p>Read the <a class="" href="https://substratum-labs.github.io/castor-docs/docs/whitepaper/">whitepaper</a> for the full technical treatment, or jump to the <a class="" href="https://substratum-labs.github.io/castor-docs/docs/getting-started/quickstart">quickstart</a> to try it yourself.</p>
 <hr>
 <p><em>Castor is open source under Apache 2.0. <a href="https://github.com/substratum-labs/castor" target="_blank" rel="noopener noreferrer" class="">GitHub</a></em></p>]]></content:encoded>
