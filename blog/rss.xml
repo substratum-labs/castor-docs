@@ -67,8 +67,9 @@
 <li class="">Expanded CLI: <code>castor run</code>, <code>castor ps</code>, <code>castor inspect</code>, <code>castor reject</code>, <code>castor modify</code></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-next">What's Next<a href="https://substratum-labs.github.io/castor-docs/blog/introducing-castor#whats-next" class="hash-link" aria-label="Direct link to What's Next" title="Direct link to What's Next" translate="no">​</a></h2>
-<p><strong>Phase 2</strong> will push hot paths to Rust via PyO3 for performance. You'll still <code>import castor</code> in Python — the Rust core will be a compiled extension module.</p>
-<p>We're also exploring <strong>Orrery</strong> — distributed agent orchestration where checkpoints are the portable unit of execution across nodes.</p>
+<p><strong>Phase 2</strong> introduces <strong>castord</strong>, an seL4-inspired Rust daemon that replaces the original PyO3 plan. The kernel becomes a pure state machine with zero I/O, communicating via dedicated protocols (AISA for agents, ATSP for tools, MCP bridge for compatibility). You'll still <code>import castor</code> in Python — castord runs as a sidecar.</p>
+<p><strong><a href="https://github.com/substratum-labs/roche" target="_blank" rel="noopener noreferrer" class="">Roche</a></strong> is our companion project for sandbox orchestration. Castor controls what agents <em>intend</em> to do; Roche controls what processes <em>can</em> do (Docker, Firecracker, WASM isolation with AI-optimized defaults). They're independent — no code dependency — but designed to work together.</p>
+<p>We're also exploring distributed agent orchestration where checkpoints are the portable unit of execution across nodes.</p>
 <p>Read the <a class="" href="https://substratum-labs.github.io/castor-docs/docs/whitepaper/">whitepaper</a> for the full technical treatment, or jump to the <a class="" href="https://substratum-labs.github.io/castor-docs/docs/getting-started/quickstart">quickstart</a> to try it yourself.</p>
 <hr>
 <p><em>Castor is open source under Apache 2.0. <a href="https://github.com/substratum-labs/castor" target="_blank" rel="noopener noreferrer" class="">GitHub</a></em></p>]]></content:encoded>
