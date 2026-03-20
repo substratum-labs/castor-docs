@@ -1,0 +1,42 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.codePreview {
+  padding: 4rem 0;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.codeBlock {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}

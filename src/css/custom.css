@@ -1,0 +1,51 @@
+/**
+ * Castor theme — deep purple primary with amber accents.
+ * Generated via https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima
+ */
+
+:root {
+  --ifm-color-primary: #5e35b1;
+  --ifm-color-primary-dark: #512da8;
+  --ifm-color-primary-darker: #4527a0;
+  --ifm-color-primary-darkest: #311b92;
+  --ifm-color-primary-light: #7e57c2;
+  --ifm-color-primary-lighter: #9575cd;
+  --ifm-color-primary-lightest: #b39ddb;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(94, 53, 177, 0.1);
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #b39ddb;
+  --ifm-color-primary-dark: #9575cd;
+  --ifm-color-primary-darker: #7e57c2;
+  --ifm-color-primary-darkest: #673ab7;
+  --ifm-color-primary-light: #ce93d8;
+  --ifm-color-primary-lighter: #e1bee7;
+  --ifm-color-primary-lightest: #f3e5f5;
+  --docusaurus-highlighted-code-line-bg: rgba(179, 157, 219, 0.15);
+}
+
+/* Hero section styling */
+.hero--primary {
+  background: linear-gradient(135deg, #311b92 0%, #5e35b1 50%, #7c4dff 100%);
+}
+
+[data-theme='dark'] .hero--primary {
+  background: linear-gradient(135deg, #1a0a4a 0%, #311b92 50%, #4a148c 100%);
+}
+
+/* Feature section */
+.features-section {
+  padding: 4rem 0;
+}
+
+/* Code block accent */
+.docusaurus-highlight-code-line {
+  background-color: rgba(94, 53, 177, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
