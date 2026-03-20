@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcastor_docs=globalThis.webpackChunkcastor_docs||[]).push([[662],{9830(a){a.exports=JSON.parse('{"metadata":{"permalink":"/castor-docs/blog","page":1,"postsPerPage":5,"totalPages":1,"totalCount":2,"blogDescription":"Technical deep-dives from the Castor team","blogTitle":"Castor Engineering Blog"}}')}}]);

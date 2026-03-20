@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcastor_docs=globalThis.webpackChunkcastor_docs||[]).push([[472],{5513(s){s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Introducing Castor: A Secure Microkernel for LLM Agents","permalink":"/castor-docs/blog/introducing-castor","unlisted":false,"date":"2026-03-06T00:00:00.000Z"}]}')}}]);

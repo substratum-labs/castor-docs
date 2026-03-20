@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcastor_docs=globalThis.webpackChunkcastor_docs||[]).push([[216],{8851(s){s.exports=JSON.parse('{"authors":[{"name":"Substrate Labs","title":"Castor Team","url":"https://github.com/substratum-labs","imageURL":"https://github.com/substratum-labs.png","key":"substratum-labs","page":null,"count":1}]}')}}]);
