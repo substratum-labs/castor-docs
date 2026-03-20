@@ -18,9 +18,9 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <p className={styles.heroDescription}>
-          Castor cages LLMs inside a deterministic execution engine with
-          strongly-typed tool validation, capability-based security budgets,
-          and preemptive human-in-the-loop interrupts.
+          The secure execution layer for AI agents. Budgets that cap spending.
+          Human approval before dangerous actions. Pause anywhere, resume later,
+          replay deterministically.
         </p>
         <div className={styles.buttons}>
           <Link
@@ -54,13 +54,13 @@ function CodePreview() {
 
 @castor_tool(consumes="api", cost_per_use=1.0)
 async def web_search(query: str) -> list[str]:
-    """Search the web — budget-controlled."""
+    """Search the web, budget-controlled."""
     return [f"Result for '{query}'"]
 
 @castor_tool(consumes="disk", cost_per_use=1.0,
              destructive=True, requires_hitl=True)
 def delete_files(paths: list[str]) -> int:
-    """Delete files — requires human approval."""
+    """Delete files, requires human approval."""
     return len(paths)
 
 kernel = Castor(tools=[web_search, delete_files])
@@ -83,8 +83,8 @@ cp = await kernel.run(agent, budgets={"api": 10.0, "disk": 5.0})
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="A Secure Microkernel for LLM Agents"
-      description="Castor cages LLMs inside a deterministic execution engine with capability-based security, checkpoint/replay, and human-in-the-loop control.">
+      title="The Secure Execution Layer for AI Agents"
+      description="Castor intercepts every tool call your agent makes, enforces resource limits, and gates destructive operations for human review.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

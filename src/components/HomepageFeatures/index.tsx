@@ -59,7 +59,7 @@ const FeatureList: FeatureItem[] = [
     icon: '\u{1F9E0}',
     description: (
       <>
-        The Lodge subsystem monitors token usage, pins system prompts, and
+        The MMU subsystem monitors token usage, pins system prompts, and
         evicts stale context via FIFO. Semantic page-in retrieves evicted
         memories on demand.
       </>
@@ -71,8 +71,8 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Use Castor as a standalone kernel or as a guard layer for existing
-        frameworks. Proven integrations with smolagents and pydantic-ai.
-        Your agent, your LLM, Castor&apos;s guarantees.
+        frameworks. Integrations with LangChain, CrewAI, smolagents, pydantic-ai,
+        and more. Your agent, your LLM, Castor&apos;s guarantees.
       </>
     ),
   },

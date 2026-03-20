@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Castor',
-  tagline: 'A Secure Microkernel for LLM Agents',
+  tagline: 'The Secure Execution Layer for AI Agents',
   favicon: 'img/favicon.ico',
 
   future: {
