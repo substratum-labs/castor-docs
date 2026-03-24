@@ -13,7 +13,7 @@ description: "Capability-based security, deterministic checkpoint/replay, and hu
 
 ## Abstract
 
-Large language model (LLM) agents that autonomously invoke external tools present a fundamental security challenge: the agent's decisions are driven by non-deterministic attention mechanisms, yet its actions (API calls, file deletions, financial transactions) have real consequences. Current agent frameworks (LangChain, CrewAI, AutoGen) provide no security boundary between the LLM and the outside world. We present Castor, a microkernel that interposes a deterministic execution engine between the LLM and external tools. Castor provides three guarantees in a single coherent system: (1) capability-based security with depletable budget tokens that prevent resource abuse by construction, (2) a checkpoint/replay execution model that enables suspend/resume, crash recovery, and human-in-the-loop control without coroutine serialization, and (3) true preemptive scheduling via asyncio task cancellation with token-level granularity. The Python prototype passes 378 tests, implements all core requirements, and demonstrates integration with seven major agent frameworks (smolagents, pydantic-ai, LangChain, CrewAI, OpenAI Agents, AutoGen, and Google ADK) as a guard layer.
+Large language model (LLM) agents that autonomously invoke external tools present a fundamental security challenge: the agent's decisions are driven by non-deterministic attention mechanisms, yet its actions (API calls, file deletions, financial transactions) have real consequences. Current agent frameworks (LangChain, CrewAI, AutoGen) provide no security boundary between the LLM and the outside world. We present Castor, a microkernel that interposes a deterministic execution engine between the LLM and external tools. Castor provides three guarantees in a single coherent system: (1) capability-based security with depletable budget tokens that prevent resource abuse by construction, (2) a checkpoint/replay execution model that enables suspend/resume, crash recovery, and human-in-the-loop control without coroutine serialization, and (3) true preemptive scheduling via asyncio task cancellation with token-level granularity. The Python prototype passes 169 tests, implements all core requirements, and demonstrates integration with seven major agent frameworks (smolagents, pydantic-ai, LangChain, CrewAI, OpenAI Agents, AutoGen, and Google ADK) as a guard layer.
 
 ---
 
@@ -59,7 +59,7 @@ We make the following contributions:
 
 4. **A context window management subsystem (MMU)** that monitors token usage, pins critical messages, and evicts stale context via FIFO with semantic page-in for retrieval.
 
-5. **A Phase 1 implementation** with 368 passing tests, zero lint errors, and integration demonstrations with smolagents and pydantic-ai.
+5. **A Phase 1 implementation** with 169 passing tests, zero lint errors, and integration demonstrations with all seven major agent frameworks (smolagents, pydantic-ai, LangChain, CrewAI, OpenAI Agents, AutoGen, and Google ADK).
 
 ---
 
@@ -251,7 +251,7 @@ Castor's `syscall_log` is structurally equivalent to Temporal's activity history
 Castor divides tool calls into two execution paths:
 
 - **Fast path:** Safe operations (searches, reads, computations) execute immediately. No human involvement, no suspension.
-- **Slow path:** Destructive or high-stakes operations (`destructive=True`, `requires_hitl=True`) suspend for human approval before any execution.
+- **Slow path:** Operations with `requires_hitl=True` always suspend for human approval before execution. Tools with only `destructive=True` (without `requires_hitl=True`) are flagged as high-risk but execute within budget without suspension.
 
 This avoids the two failure modes of naive HITL: approving everything (unusable) or approving nothing (unsafe).
 

@@ -47,7 +47,7 @@ To work on Castor itself:
 git clone https://github.com/substratum-labs/castor.git
 cd castor
 uv sync          # Install all dependencies
-uv run pytest    # Run the test suite (368 tests)
+uv run pytest    # Run the test suite (169 tests)
 uv run ruff check src/   # Lint
 uv run ruff format src/  # Format
 ```

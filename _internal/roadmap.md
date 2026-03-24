@@ -6,7 +6,7 @@ sidebar_position: 100
 
 ## Phase 1: Python Prototype (Complete)
 
-All core PRD requirements are implemented with 368 passing tests.
+All core PRD requirements are implemented with 169 passing tests.
 
 | Milestone | Status | Features |
 |---|---|---|

@@ -60,9 +60,10 @@ Run with budgets:
 kernel = Castor(tools=[web_search, delete_file])
 cp = await kernel.run(my_agent, budgets={"api": 10.0, "disk": 3.0})
 
-if cp.status == "SUSPENDED_FOR_HITL":
-    print(cp.pending_hitl)  # delete_file needs approval
-    cp = await kernel.resume(cp, decision="approve")
+if cp.is_suspended:
+    print(cp.pending_tool, cp.pending_args)  # delete_file needs approval
+    await kernel.approve(cp)
+    cp = await kernel.run(my_agent, checkpoint=cp)
 ```
 
 Or from the CLI:
@@ -128,7 +129,7 @@ For defense in depth, pair Castor with infrastructure-level isolation. [Roche](h
 
 `pip install castor-kernel`. Apache 2.0, Python 3.11+.
 
-- 373 tests, zero lint errors
+- 169 tests, zero lint errors
 - Core subsystems: Gate, Scheduler, MMU, Capability
 - Multi-agent spawning (sync + async) with budget delegation
 - `castor.lib` standard patterns: `run_task()`, `react()`, `supervisor()`, `map_reduce()`, `conversation()`
