@@ -32,21 +32,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/substratum-labs/castor-docs/edit/main/',
         },
-        blog: {
-          showReadingTime: true,
-          blogTitle: 'Castor Engineering Blog',
-          blogDescription: 'Technical deep-dives from the Castor team',
-          postsPerPage: 5,
-          blogSidebarCount: 'ALL',
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl: 'https://github.com/substratum-labs/castor-docs/edit/main/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -74,7 +60,7 @@ const config: Config = {
           label: 'Whitepaper',
           position: 'left',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: 'https://substratumlabs.ai/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://substratum-labs.github.io/castor/',
           label: 'API Reference',
@@ -118,7 +104,7 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {label: 'Blog', to: '/blog'},
+            {label: 'Blog', href: 'https://substratumlabs.ai/blog'},
             {
               label: 'Issues',
               href: 'https://github.com/substratum-labs/castor/issues',
