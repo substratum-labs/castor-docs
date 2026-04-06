@@ -60,7 +60,6 @@ const config: Config = {
           label: 'Whitepaper',
           position: 'left',
         },
-        {to: 'https://substratumlabs.ai/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://substratum-labs.github.io/castor/',
           label: 'API Reference',
@@ -104,7 +103,6 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {label: 'Blog', href: 'https://substratumlabs.ai/blog'},
             {
               label: 'Issues',
               href: 'https://github.com/substratum-labs/castor/issues',
